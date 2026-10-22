@@ -18,8 +18,20 @@
 <body>
   <a class="skip" href="#about">Skip to content</a>
 
+  <div id="intro" class="intro" role="dialog" aria-modal="true" aria-labelledby="intro-title" hidden>
+    <div class="intro-inner">
+      <div class="intro-face" aria-hidden="true"></div>
+      <p class="eyebrow">2027 EDITION</p>
+      <p id="intro-title" class="logo"><span>SUPER</span> MARWAN</p>
+      <button id="intro-start" class="intro-start" type="button">▶ PRESS START</button>
+      <p class="intro-sub">Senior Data Scientist · ♪ sound on</p>
+      <button id="intro-mute" class="intro-mute" type="button">enter without sound</button>
+    </div>
+    <div class="intro-ground" aria-hidden="true"></div>
+  </div>
+
   <header class="hud" aria-label="Status bar">
-    <div class="hud-cell"><span>MARWAN</span><strong id="score">000000</strong></div>
+    <div class="hud-cell"><span><i class="face-icon" aria-hidden="true"></i>MARWAN</span><strong id="score">000000</strong></div>
     <div class="hud-cell"><span><i class="coin-icon" aria-hidden="true"></i>COINS</span><strong id="coins">×00</strong></div>
     <div class="hud-cell"><span>WORLD</span><strong id="world">START</strong></div>
     <div class="hud-cell hide-sm"><span>TIME</span><strong>2027</strong></div>
@@ -261,6 +273,7 @@
         <div class="finale">
           <div class="flagpole" aria-hidden="true"><div class="flag"></div></div>
           <div class="panel contact">
+            <div class="contact-face" aria-hidden="true"></div>
             <p>I'm open to senior data science and AI engineering roles. Let's talk.</p>
             <div class="contact-links">
               <a class="btn primary" href="mailto:maro99947@gmail.com">✉ maro99947@gmail.com</a>

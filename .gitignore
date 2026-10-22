@@ -1,3 +1,6 @@
 .DS_Store
 node_modules/
 .vercel/
+
+# Original photos stay local; only the pixel portrait is published
+Photo on *.jpg
