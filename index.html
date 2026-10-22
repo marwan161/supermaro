@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marwan Amr · Senior Data Scientist</title>
+  <meta name="description" content="Marwan Amr, Senior Data Scientist. Multi-agent AI systems, time-series forecasting and semantic search, with $600K+ of proven business impact.">
+  <meta property="og:title" content="Super Marwan · Senior Data Scientist">
+  <meta property="og:description" content="Multi-agent AI, forecasting and semantic search. Press start to play.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#6b8cff">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect width='16' height='16' fill='%239c4a00'/%3E%3Crect x='1' y='1' width='14' height='14' fill='%23fca044'/%3E%3Cpath d='M5 4h5v1h1v3h-1v1H8v2H7V8h2V5H6v2H5z' fill='%23fff4d6'/%3E%3Crect x='7' y='12' width='1' height='2' fill='%23fff4d6'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#about">Skip to content</a>
+
+  <header class="hud" aria-label="Status bar">
+    <div class="hud-cell"><span>MARWAN</span><strong id="score">000000</strong></div>
+    <div class="hud-cell"><span><i class="coin-icon" aria-hidden="true"></i>COINS</span><strong id="coins">×00</strong></div>
+    <div class="hud-cell"><span>WORLD</span><strong id="world">START</strong></div>
+    <div class="hud-cell hide-sm"><span>TIME</span><strong>2027</strong></div>
+    <div class="hud-actions">
+      <button id="stars" class="hud-btn hud-stars" type="button" title="Pause menu (P)" aria-haspopup="dialog">★ 0/10</button>
+      <button id="sound" class="hud-btn" type="button" aria-pressed="false" title="Toggle sound">♪ OFF</button>
+      <a class="hud-btn hud-cv" href="assets/Marwan_Amr_CV.pdf" download>CV ↓</a>
+    </div>
+  </header>
+
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+
+  <dialog id="menu" class="menu" aria-labelledby="menu-title">
+    <h2 id="menu-title">PAUSED</h2>
+    <ul id="menu-stats" class="menu-stats"></ul>
+    <h3>ACHIEVEMENTS</h3>
+    <ul id="ach-list" class="ach-list"></ul>
+    <div class="menu-actions">
+      <button id="menu-resume" class="btn primary" type="button">RESUME</button>
+      <button id="menu-reset" class="btn" type="button">RESET PROGRESS</button>
+    </div>
+  </dialog>
+
+  <main>
+    <!-- ============ TITLE SCREEN ============ -->
+    <section id="start" class="hero" data-world="START">
+      <div class="hero-title">
+        <p class="eyebrow">2027 EDITION</p>
+        <h1 class="logo"><span>SUPER</span> MARWAN</h1>
+        <p class="tagline">Senior Data Scientist · Multi-agent AI · Forecasting · Semantic search</p>
+        <p class="hint touch-hint">tap <kbd>◀</kbd><kbd>▶</kbd> to move, <kbd>A</kbd> to jump · hit a <i class="q-icon" aria-hidden="true"></i> block</p>
+        <p class="hint key-hint" id="hint"><kbd>←</kbd><kbd>→</kbd> move &nbsp; <kbd>↑</kbd>/<kbd>SPACE</kbd> jump &nbsp;·&nbsp; hit a <i class="q-icon" aria-hidden="true"></i> block</p>
+      </div>
+      <div class="stage">
+        <canvas id="game" aria-label="A playable mini level. Hit the question blocks to jump to a section." role="img"></canvas>
+        <div class="touchpad" aria-hidden="true">
+          <button type="button" data-key="left" tabindex="-1">◀</button>
+          <button type="button" data-key="right" tabindex="-1">▶</button>
+          <button type="button" data-key="jump" class="jump" tabindex="-1">A</button>
+        </div>
+      </div>
+      <nav class="quick-nav" aria-label="Sections">
+        <a href="#about">ABOUT</a>
+        <a href="#work">WORK</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#awards">AWARDS</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+    </section>
+
+    <!-- ============ 1-1 ABOUT ============ -->
+    <section id="about" class="world overworld" data-world="1-1">
+      <div class="deco cloud c1" aria-hidden="true"></div>
+      <div class="deco cloud c2" aria-hidden="true"></div>
+      <div class="wrap">
+        <header class="world-head">
+          <p class="world-tag">WORLD 1-1</p>
+          <h2>PLAYER 1: MARWAN</h2>
+        </header>
+        <div class="about-grid">
+          <div class="panel bio">
+            <button class="avatar" type="button" aria-label="Player 1"></button>
+            <p>I build AI systems that ship and make money. As a <strong>Senior Data Scientist at Datalentech</strong> I run projects end to end: scoping the problem with stakeholders, then the database design, the models, the performance tuning and the deployment.</p>
+            <p>My work covers <strong>multi-agent LLM orchestration</strong>, <strong>time-series forecasting</strong> and <strong>semantic search</strong>, along with the PostgreSQL, Redis and MLOps plumbing that makes them hold up in production.</p>
+            <p class="based">📍 Cairo, Egypt · B.Sc. Data Science &amp; AI, Zewail City '26</p>
+          </div>
+          <ul class="stats" aria-label="Highlights">
+            <li class="stat"><strong>$600K+</strong><span>revenue uplift from a forecast-driven harvest plan</span></li>
+            <li class="stat"><strong>85%</strong><span>candidate–job matching accuracy with vector search</span></li>
+            <li class="stat"><strong>5×</strong><span>candidate search throughput after MLOps hardening</span></li>
+            <li class="stat"><strong>2nd</strong><span>of 1,000+ teams at Egypt's largest AI hackathon</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ground" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ 1-2 WORK ============ -->
+    <section id="work" class="world underground" data-world="1-2">
+      <div class="ceiling" aria-hidden="true"></div>
+      <div class="wrap">
+        <header class="world-head">
+          <p class="world-tag">WORLD 1-2 · UNDERGROUND</p>
+          <h2>WORK EXPERIENCE</h2>
+        </header>
+
+        <ol class="timeline">
+          <li class="level">
+            <div class="level-meta">
+              <span class="pill now">NOW PLAYING</span>
+              <span class="dates">Jun 2026 – Present</span>
+            </div>
+            <h3>Senior Data Scientist <em>@ Datalentech</em></h3>
+            <p class="place">Cairo, Egypt</p>
+          </li>
+
+          <li class="level">
+            <div class="level-meta">
+              <span class="pill">CLEARED</span>
+              <span class="dates">Jun 2024 – Jun 2026</span>
+            </div>
+            <h3>AI/ML Engineer <em>@ Datalentech</em></h3>
+            <p class="place">Cairo, Egypt</p>
+
+            <article class="quest panel">
+              <h4>Multi-Agent AI Hiring Platform</h4>
+              <ul>
+                <li>Owned the architecture end to end, orchestrating <strong>5+ specialised agents</strong> for CV screening, skill analysis, matching, interview generation and career development.</li>
+                <li>Built a <strong>Career Development Agent</strong> that uses MCP tool-calling to search live course databases, and a <strong>Pre-Interview Intelligence Agent</strong> that briefs recruiters before technical interviews.</li>
+                <li>Semantic job–candidate matching with Vertex AI embeddings + pgvector: <strong>85% matching accuracy</strong>.</li>
+                <li>Designed a Lambda/Beta ratio algorithm that checks whether a skill is real by comparing theoretical-knowledge signals with practical-experience signals.</li>
+                <li>Built PostgreSQL from scratch with IVFFlat vector indexes, then led a full-stack performance push (Redis caching, batched parallel queries, cursor pagination, React memoisation): <strong>5× search throughput</strong>.</li>
+              </ul>
+              <ul class="chips" aria-label="Tech used">
+                <li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>pgvector</li><li>Redis</li><li>Vertex AI</li><li>LangChain</li><li>MCP</li>
+              </ul>
+            </article>
+
+            <article class="quest panel">
+              <h4>Poultry Price Forecasting &amp; Harvest Optimisation</h4>
+              <ul>
+                <li>Delivered an end-to-end forecasting system for <strong>23+ SKUs</strong>, from scoping with stakeholders to deployment.</li>
+                <li>LightGBM + Optuna on highly volatile sales data, with target normalisation and signal stabilisation to tame price swings.</li>
+                <li>Added an explainability layer (SHAP, LIME, custom feature degradation) so the business could trust what drives each forecast.</li>
+                <li>A harvest plan driven by the forecasts raised profitability by <strong>10% (about $600,000)</strong>.</li>
+              </ul>
+              <ul class="chips" aria-label="Tech used">
+                <li>Python</li><li>LightGBM</li><li>Optuna</li><li>SHAP</li><li>LIME</li>
+              </ul>
+            </article>
+          </li>
+        </ol>
+      </div>
+      <div class="ground ug" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ 1-3 PROJECTS ============ -->
+    <section id="projects" class="world overworld" data-world="1-3">
+      <div class="deco cloud c3" aria-hidden="true"></div>
+      <div class="wrap">
+        <header class="world-head">
+          <p class="world-tag">WORLD 1-3</p>
+          <h2>SIDE QUESTS</h2>
+        </header>
+        <div class="pipes">
+          <article class="project">
+            <div class="panel">
+              <h3>Retrieval-Augmented Generation System</h3>
+              <p>A RAG pipeline with custom retrievers that ingests PDFs, codebases and web data. Context-aware chunking and re-ranking make answers more relevant and cut hallucinations.</p>
+              <ul class="chips"><li>Python</li><li>LangChain</li><li>DeepSeek</li></ul>
+            </div>
+            <div class="pipe" aria-hidden="true"></div>
+          </article>
+          <article class="project">
+            <div class="panel">
+              <h3>Multi-Person Tracking System</h3>
+              <p>Real-time tracking of several people with re-identification embeddings, so each person keeps the same identity through occlusion and when they leave and re-enter the frame.</p>
+              <ul class="chips"><li>YOLOv12</li><li>OSNet</li><li>DeepSort</li></ul>
+            </div>
+            <div class="pipe" aria-hidden="true"></div>
+          </article>
+          <article class="project">
+            <div class="panel">
+              <h3>Face Recognition iOS App</h3>
+              <p>On-device face recognition with ArcFace embeddings and cosine-similarity verification. <strong>92% accuracy</strong>, with no server needed.</p>
+              <ul class="chips"><li>Swift</li><li>TensorFlow</li><li>ArcFace</li></ul>
+            </div>
+            <div class="pipe" aria-hidden="true"></div>
+          </article>
+          <article class="project">
+            <div class="panel">
+              <h3>Explainable Credit Scoring</h3>
+              <p>Interpretable credit-risk models with SHAP, LIME and counterfactual explanations, built for financial compliance.</p>
+              <ul class="chips"><li>XGBoost</li><li>LightGBM</li><li>SHAP</li><li>LIME</li></ul>
+            </div>
+            <div class="pipe" aria-hidden="true"></div>
+          </article>
+        </div>
+        <p class="more"><a class="btn" href="https://github.com/Marwan947" target="_blank" rel="noopener">MORE ON GITHUB →</a></p>
+      </div>
+      <div class="ground" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ 1-4 SKILLS ============ -->
+    <section id="skills" class="world sunset" data-world="1-4">
+      <div class="wrap">
+        <header class="world-head">
+          <p class="world-tag">WORLD 1-4</p>
+          <h2>POWER-UPS</h2>
+          <p class="sub">Tap a <i class="q-icon" aria-hidden="true"></i> for a coin.</p>
+        </header>
+        <div class="powerups">
+          <div class="powerup panel"><button class="qbtn" type="button" aria-label="Collect a coin"></button><h3>Agentic AI &amp; LLMs</h3><ul class="chips"><li>LangChain</li><li>MCP Servers</li><li>Tool-Calling</li><li>Multi-Agent Orchestration</li><li>Gemini API</li></ul></div>
+          <div class="powerup panel"><button class="qbtn" type="button" aria-label="Collect a coin"></button><h3>Machine Learning</h3><ul class="chips"><li>LightGBM</li><li>XGBoost</li><li>Time-Series Forecasting</li><li>Feature Engineering</li><li>Optuna</li><li>SHAP</li><li>LIME</li><li>Explainable AI</li></ul></div>
+          <div class="powerup panel"><button class="qbtn" type="button" aria-label="Collect a coin"></button><h3>Deep Learning &amp; CV</h3><ul class="chips"><li>PyTorch</li><li>TensorFlow</li><li>Keras</li><li>Hugging Face</li><li>Scikit-learn</li><li>OpenCV</li><li>YOLO</li><li>DeepSort</li><li>ArcFace</li></ul></div>
+          <div class="powerup panel"><button class="qbtn" type="button" aria-label="Collect a coin"></button><h3>Vectors &amp; Search</h3><ul class="chips"><li>Vertex AI Embeddings</li><li>pgvector</li><li>FAISS</li><li>ChromaDB</li></ul></div>
+          <div class="powerup panel"><button class="qbtn" type="button" aria-label="Collect a coin"></button><h3>Backend &amp; Data</h3><ul class="chips"><li>FastAPI</li><li>Flask</li><li>Node.js</li><li>PostgreSQL</li><li>Redis</li><li>Supabase</li></ul></div>
+          <div class="powerup panel"><button class="qbtn" type="button" aria-label="Collect a coin"></button><h3>Cloud, MLOps &amp; Frontend</h3><ul class="chips"><li>GCP</li><li>Vertex AI</li><li>Docker</li><li>Git</li><li>MLOps Pipelines</li><li>React</li></ul></div>
+          <div class="powerup panel wide"><button class="qbtn" type="button" aria-label="Collect a coin"></button><h3>Languages</h3><ul class="chips"><li>Python</li><li>SQL</li><li>TypeScript</li><li>JavaScript</li><li>C/C++</li><li>C#</li><li>Swift</li></ul></div>
+        </div>
+      </div>
+      <div class="ground" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ 1-5 AWARDS ============ -->
+    <section id="awards" class="world overworld" data-world="1-5">
+      <div class="deco cloud c1" aria-hidden="true"></div>
+      <div class="wrap">
+        <header class="world-head">
+          <p class="world-tag">WORLD 1-5</p>
+          <h2>TROPHY ROOM</h2>
+        </header>
+        <div class="trophies">
+          <article class="panel trophy">
+            <div class="star" aria-hidden="true"></div>
+            <h3>2nd Place · Beltone AI Hackathon 2025</h3>
+            <p>Egypt's largest AI competition: <strong>3,500+ contributors, 1,000+ teams, 34+ universities</strong>. Won $4,000 for an AI supply-chain optimiser that found the cheapest, fastest deliveries with 100% order fulfilment.</p>
+          </article>
+          <article class="panel trophy">
+            <div class="star" aria-hidden="true"></div>
+            <h3>B.Sc. Data Science &amp; AI · Zewail City</h3>
+            <p>Oct 2022 – Jun 2026. Awarded the <strong>Silver Medal</strong> at graduation for the hackathon win. Coursework: ML, Deep Learning, Computer Vision, NLP, Statistical Inference, Optimisation, Explainable AI.</p>
+          </article>
+        </div>
+      </div>
+      <div class="ground" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ 2027 CONTACT ============ -->
+    <section id="contact" class="world night" data-world="2027">
+      <div class="stars" aria-hidden="true"></div>
+      <div class="wrap">
+        <header class="world-head">
+          <p class="world-tag">WORLD 2027 · FINAL CASTLE</p>
+          <h2>COURSE CLEAR!</h2>
+          <p class="sub">Your next hire is in this castle.</p>
+        </header>
+        <div class="finale">
+          <div class="flagpole" aria-hidden="true"><div class="flag"></div></div>
+          <div class="panel contact">
+            <p>I'm open to senior data science and AI engineering roles. Let's talk.</p>
+            <div class="contact-links">
+              <a class="btn primary" href="mailto:maro99947@gmail.com">✉ maro99947@gmail.com</a>
+              <a class="btn" href="https://www.linkedin.com/in/Marwan" target="_blank" rel="noopener">LINKEDIN</a>
+              <a class="btn" href="https://github.com/Marwan947" target="_blank" rel="noopener">GITHUB</a>
+              <a class="btn" href="assets/Marwan_Amr_CV.pdf" download>DOWNLOAD CV</a>
+            </div>
+          </div>
+          <div class="castle" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="ground" aria-hidden="true"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2027 Marwan Amr · Original pixel art drawn in code · A fan-style homage, not affiliated with Nintendo.</p>
+    <p><a href="#start">▲ BACK TO START</a></p>
+  </footer>
+
+  <nav id="track" class="track" aria-label="Level progress">
+    <div class="track-line">
+      <div class="track-castle" aria-hidden="true"></div>
+      <div class="runner" aria-hidden="true"></div>
+    </div>
+  </nav>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
